@@ -1,4 +1,4 @@
-import './Portfolio.css'
+import './styles/Portfolio.css'
 import Header from "./Header"
 import About from "./About"
 import Experience from './Experience'
