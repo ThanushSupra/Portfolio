@@ -18,24 +18,28 @@ const Projects = () => {
 
 
   return (
-    <div>
-      <h3>Projects</h3>
+    <div className="pt-8">
+      <h3 className='text-4xl text-white'>Projects</h3>
 
-      {projects.map((p, key) => ( 
-        <div key={key}>
+      <div>
+        {projects.map((p, key) => ( 
+          <div key={key}>
 
-          <h4> {p.name} | <span> {p.techstack} </span></h4>
-          <h5> <a href={p.link}> GitHub </a></h5>
-          <p> {p.time} </p>
+            <h4 className='text-gray-200 text-2xl'> {p.name} </h4>
 
-          <ul>
-          {p.description.map((item, k) => ( 
-            <li> - {item}</li>
-          ))}
-          </ul>
+            <p className='text-gray-300 text-xl'> 
+              {p.time} | <a className='text-decoration-line: underline' href={p.link}>Link</a>
+            </p>
 
-        </div>
-      ))}
+            <ul className="text-gray-400 text-lg">
+            {p.description.map((item, k) => ( 
+              <li> - {item}</li>
+            ))}
+            </ul>
+
+          </div>
+        ))}
+    </div>
 
     </div>
   )

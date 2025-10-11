@@ -9,7 +9,7 @@ const Portfolio  = () =>  {
 
   return (
     
-    <div>
+    <div className = "mx-auto max-w-screen-md">
         <Header/>
         <About/>
         <Experience/>
