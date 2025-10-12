@@ -1,5 +1,5 @@
 import React from 'react'
-import profilePhoto from "../assets/ProfilePhoto.JPG";
+import profilePhoto from "../assets/ProfilePhoto.jpg";
 
 const Header = () => {
   return (
@@ -23,10 +23,10 @@ const Header = () => {
       </div>
 
       <nav className="mt-4 flex flex-wrap gap-4 text-2xl text-gray-400">
-        <a href="#about" className="hover:text-white">About</a>
-        <a href="#experience" className="hover:text-white">Experience</a>
-        <a href="#projects" className="hover:text-white">Projects</a>
-        <a href="#skills" className="hover:text-white">Skills</a>
+        <a href="#about" className="hover:text-white transition duration-300 hover:scale-[1.1]">About</a>
+        <a href="#experience" className="hover:text-white transition duration-300 hover:scale-[1.1]">Experience</a>
+        <a href="#projects" className="hover:text-white transition duration-300 hover:scale-[1.1]">Projects</a>
+        <a href="#skills" className="hover:text-white transition duration-300 hover:scale-[1.1]">Skills</a>
       </nav>
     </header>
 )
