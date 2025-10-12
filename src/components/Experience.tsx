@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Experience = () => {
 
@@ -19,45 +19,28 @@ const Experience = () => {
 
 
   return (
-    <div className = 'pt-8'>
+    <section id="experience" aria-label="Experience">
+      <h3 className='text-4xl text-white'>Experience</h3>
 
-      <h3 className = 'text-4xl text-white'>Experience</h3>
-      
-      {experiences.map((e, key) => ( 
-        <div key={key}>
-
-            <div className='flex'>
-              
-              <img src={e.logo} alt="Weve" className='w-20 h-30 rounded-full object-cover object-center' />
-              
-              <div className="text-gray-200 text-3xl mt-8">
-
-                {e.position} @ {e.company}  <span className="text-base text-gray-400 font-bold"> {} </span> 
-                <h5 className="text-gray-200 text-xl"> {e.location} </h5>
-                <p className="text-gray-300 text-lg"> {e.techstack} </p>
-
-              </div>
-
+      {experiences.map((e, key) => (
+        <article key={key} className="mt-4">
+          <div className='flex items-center gap-4'>
+            <img src={e.logo} alt={`${e.company} logo`} className='w-20 h-20 rounded-full object-cover object-center' loading="lazy" />
+            <div className="text-gray-200">
+              <h4 className="text-3xl">{e.position} @ {e.company}</h4>
+              <p className="text-gray-400 text-base">{e.location} • <time>{e.duration}</time></p>
+              <p className="text-gray-300 text-lg">{e.techstack}</p>
             </div>
+          </div>
 
-            <div className='ml-20'>
-
-              <div className='text-gray-200'/>
-
-              <ul className="text-gray-400 text-lg">
-
-                {e.description.map((item, k) => (
-                  <li key={k}>- {item}</li>
-              ))}
-
-              </ul>
-            </div>
-
-
-        </div>
+          <ul className="ml-24 list-disc text-gray-400 text-lg mt-3 space-y-1 pl-1">
+            {e.description.map((item, k) => (
+              <li key={k}>{item}</li>
+            ))}
+          </ul>
+        </article>
       ))}
-
-    </div>
+    </section>
   )
 }
 

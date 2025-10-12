@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 @import "tailwindcss";
 
- * { 
-    background-color: #000;
-    font-family: "Jersey 10", sans-serif;
-   }
+:root {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: #000;
+}
+
+body {
+  font-family: "Jersey 10", sans-serif;
+}

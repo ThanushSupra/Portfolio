@@ -18,30 +18,25 @@ const Projects = () => {
 
 
   return (
-    <div className="pt-8">
+    <section id="projects" aria-label="Projects">
       <h3 className='text-4xl text-white'>Projects</h3>
 
-      <div>
-        {projects.map((p, key) => ( 
-          <div key={key}>
-
-            <h4 className='text-gray-200 text-2xl'> {p.name} </h4>
-
-            <p className='text-gray-300 text-xl'> 
-              {p.time} | <a className='text-decoration-line: underline' href={p.link}>Link</a>
+      <div className="mt-4 space-y-6">
+        {projects.map((p, key) => (
+          <article key={key}>
+            <h4 className='text-gray-200 text-2xl'>{p.name}</h4>
+            <p className='text-gray-300 text-xl'>
+              {p.time} | <a className='underline hover:text-white' href={p.link} target="_blank" rel="noopener noreferrer">Link</a>
             </p>
-            
-            <ul className="text-gray-400 text-lg">
-            {p.description.map((item, k) => ( 
-              <li> - {item}</li>
-            ))}
+            <ul className="text-gray-400 text-lg mt-2 space-y-1 list-disc pl-5">
+              {p.description.map((item, k) => (
+                <li key={k}>{item}</li>
+              ))}
             </ul>
-
-          </div>
+          </article>
         ))}
-    </div>
-
-    </div>
+      </div>
+    </section>
   )
 }
 
