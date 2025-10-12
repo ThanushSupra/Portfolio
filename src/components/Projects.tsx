@@ -30,7 +30,7 @@ const Projects = () => {
             <p className='text-gray-300 text-xl'> 
               {p.time} | <a className='text-decoration-line: underline' href={p.link}>Link</a>
             </p>
-
+            
             <ul className="text-gray-400 text-lg">
             {p.description.map((item, k) => ( 
               <li> - {item}</li>

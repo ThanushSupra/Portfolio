@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from './Profile'
+import profilePhoto from "../assets/ProfilePhoto.JPG";
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
       </h2>
     </div>
 
-    <Profile/>
+    <img className="ml-auto w-27 h-27 rounded-[50%] object-cover object-center" src={profilePhoto} alt="Profile Photo" />
 
   </div>
 )

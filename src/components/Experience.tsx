@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Experience = () => {
 
@@ -6,7 +6,7 @@ const Experience = () => {
     {
       company: "Weve",
       position: "Software Engineering Intern",
-      logo: "",
+      logo: new URL('../assets/weve.png', import.meta.url).href,
       techstack: "React, Typescript, Tailwind, Supabase, Mapbox GL, Apple Maps",
       location: "Toronto, Canada",
       duration: "May 2025 - August 2025",
@@ -17,22 +17,42 @@ const Experience = () => {
     }
   ]
 
+
   return (
     <div className = 'pt-8'>
+
       <h3 className = 'text-4xl text-white'>Experience</h3>
       
       {experiences.map((e, key) => ( 
         <div key={key}>
 
-            <h4 className="text-gray-200 text-2xl">{e.position} @ {e.company}  <span className="text-base text-gray-400 font-bold"> {e.duration} </span> </h4>
-            <h5 className="text-gray-200 text-xl"> {e.location} </h5>
-            <p className="text-gray-300 text-lg"> {e.techstack} </p>
+            <div className='flex'>
+              
+              <img src={e.logo} alt="Weve" className='w-20 h-30 rounded-full object-cover object-center' />
+              
+              <div className="text-gray-200 text-3xl mt-8">
 
-            <ul className="text-gray-400 text-lg">
-              {e.description.map((item, k) => (
-                <li key={k}>- {item}</li>
-            ))}
-            </ul>
+                {e.position} @ {e.company}  <span className="text-base text-gray-400 font-bold"> {} </span> 
+                <h5 className="text-gray-200 text-xl"> {e.location} </h5>
+                <p className="text-gray-300 text-lg"> {e.techstack} </p>
+
+              </div>
+
+            </div>
+
+            <div className='ml-20'>
+
+              <div className='text-gray-200'/>
+
+              <ul className="text-gray-400 text-lg">
+
+                {e.description.map((item, k) => (
+                  <li key={k}>- {item}</li>
+              ))}
+
+              </ul>
+            </div>
+
 
         </div>
       ))}
