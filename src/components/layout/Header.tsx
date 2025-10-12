@@ -1,5 +1,4 @@
-import React from 'react'
-import profilePhoto from "../assets/ProfilePhoto.jpg";
+const profilePhoto = new URL('../../assets/ProfilePhoto.JPG', import.meta.url).href;
 
 const Header = () => {
   return (

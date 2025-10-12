@@ -1,10 +1,10 @@
 import './styles/index.css'
-import Header from "./components/Header"
-import About from "./components/About"
-import Experience from './components/Experience'
-import Projects from "./components/Projects"
-import Skills from "./components/Skills"
-import Footer from "./components/Footer"
+import Header from "./components/layout/Header"
+import About from "./components/sections/About"
+import Experience from './components/sections/Experience'
+import Projects from "./components/sections/Projects"
+import Skills from "./components/sections/Skills"
+import Footer from "./components/layout/Footer"
 
 const Portfolio  = () =>  {
 
