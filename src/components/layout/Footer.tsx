@@ -1,7 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-const resume = '/ThanushSupramaniamResume_.pdf'
+const resume = '/ThanushSupramaniamResume__.pdf'
 
 
 const Footer = () => {
