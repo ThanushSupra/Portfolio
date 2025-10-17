@@ -2,11 +2,23 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 const resume = '/ThanushSupramaniamResume__.pdf'
+import { useInView } from "react-intersection-observer";
 
 
 const Footer = () => {
+
+  const {ref: footerRef, inView} = useInView({ threshold: 0.25, triggerOnce: false});
+
+  // Base transition utility classes: short, subtle, and snappy
+  const base = "transition-all duration-300 ease-out";
+  // Hidden state: fully transparent and shifted down a bit
+  const hidden = "opacity-0 translate-y-4";
+  // Visible state: fully opaque and in place
+  const shown = "opacity-100 translate-y-0";
   return (
-    <footer>
+    <footer ref = {footerRef} id="footer" aria-label="Footer"
+    
+    className={`${base} ${inView ? shown : hidden}`}>
 
         <div className = "flex items-center justify-center">
 

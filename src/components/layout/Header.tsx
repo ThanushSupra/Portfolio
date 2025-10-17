@@ -1,8 +1,20 @@
 const profilePhoto = new URL('../../assets/ProfilePhoto.JPG', import.meta.url).href;
-
+import { useInView } from "react-intersection-observer";
 const Header = () => {
+
+  const {ref: headerRef, inView} = useInView({ threshold: 0.25, triggerOnce: false});
+
+  // Base transition utility classes: short, subtle, and snappy
+  const base = "transition-all duration-300 ease-out";
+  // Hidden state: fully transparent and shifted down a bit
+  const hidden = "opacity-0 translate-y-4";
+  // Visible state: fully opaque and in place
+  const shown = "opacity-100 translate-y-0";
   return (
-    <header>
+    <header ref = {headerRef} id="header" aria-label="Header"
+    
+    className={`${base} ${inView ? shown : hidden}`}>
+      
       <div className='flex items-center gap-6'>
         <div>
           <h1 className="text-5xl text-white">

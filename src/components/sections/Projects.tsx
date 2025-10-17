@@ -1,11 +1,22 @@
 import { projects } from '../../data/projects'
+import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
 
+  const {ref: projectsRef, inView} = useInView({ threshold: 0.25, triggerOnce: false});
 
+  // Base transition utility classes: short, subtle, and snappy
+  const base = "transition-all duration-300 ease-out";
+  // Hidden state: fully transparent and shifted down a bit
+  const hidden = "opacity-0 translate-y-4";
+  // Visible state: fully opaque and in place
+  const shown = "opacity-100 translate-y-0";
 
   return (
-    <section id="projects" aria-label="Projects">
+    <section ref = {projectsRef} id="projects" aria-label="Projects"
+    
+    className={`${base} ${inView ? shown : hidden}`}>
+      
       <h3 className='text-4xl text-white'>Projects</h3>
 
       <div className="mt-4 space-y-6">
