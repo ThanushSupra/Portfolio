@@ -1,14 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@theme {
+  /* Brand accent: cyan → indigo (aurora vibe) */
+  --color-accent: #38BDF8;           /* Sky 400: links, highlights, rings */
+  --color-accent-2: #6366F1;         /* Indigo 500: secondary accent, hovers */
+
+  /* Neutrals */
+  --color-background: #0B0D12;       /* Page background */
+  --color-surface: #111318;          /* Cards/sections */
+  --color-foreground: #F4F4F5;       /* Primary text */
+  --color-muted: #A1A1AA;            /* Secondary text */
+  --color-border: #27272A;           /* Hairline borders/dividers */
+
+  /* Optional states */
+  --color-success: #34D399;          /* Badges or success states */
+  --color-destructive: #EF4444;      /* Destructive actions */
+}
+
+/* Alternate palettes (comment/uncomment to switch quickly)
+
+  Teal → Cyan
+  @theme {
+    --color-accent: #14B8A6;  
+    --color-accent-2: #22D3EE;
+  }
+
+  Violet → Fuchsia
+  @theme {
+    --color-accent: #8B5CF6;
+    --color-accent-2: #D946EF;
+  }
+*/
+
 @import "tailwindcss";
 
-:root {
-  scroll-behavior: smooth;
-}
+:root { scroll-behavior: smooth; }
 
-html, body {
-  background-color: #000;
-}
-
+/* Apply theme defaults */
 body {
+  @apply bg-background text-foreground antialiased;
   font-family: "Jersey 10", sans-serif;
 }
