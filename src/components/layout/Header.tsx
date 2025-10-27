@@ -1,4 +1,7 @@
 const profilePhoto = new URL('../../assets/ProfilePhoto.JPG', import.meta.url).href;
+import Typist from 'react-typist-component';
+
+
 import { useInView } from "react-intersection-observer";
 const Header = () => {
 
@@ -18,10 +21,10 @@ const Header = () => {
       <div className='flex items-center gap-6'>
         <div>
           <h1 className="text-5xl text-white">
-            Hey, I'm Thanush Supramaniam!
+            <Typist startDelay={1000} typingDelay={60}>Hey, I'm Thanush Supramaniam!</Typist>
           </h1>
           <h2 className="text-4xl text-gray-400">
-              Software Engineer Specializing in AI & ML
+              <Typist startDelay={3000} typingDelay={60}  >Software Engineer Specializing in AI & ML</Typist>
           </h2>
         </div>
 
