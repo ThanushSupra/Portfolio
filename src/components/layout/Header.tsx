@@ -21,10 +21,10 @@ const Header = () => {
       <div className='flex items-center gap-6'>
         <div>
           <h1 className="text-5xl text-white">
-            <Typist startDelay={1000} typingDelay={60}>Hey, I'm Thanush Supramaniam!</Typist>
+            <Typist startDelay={1000} typingDelay={60} cursor='|' hideCursorWhenDone={true} >Hey, I'm Thanush Supramaniam!</Typist>
           </h1>
           <h2 className="text-4xl text-gray-400">
-              <Typist startDelay={3000} typingDelay={60}  >Software Engineer Specializing in AI & ML</Typist>
+              <Typist startDelay={3000} typingDelay={60} cursor='|' hideCursorWhenDone={true} >Software Engineer Specializing in AI & ML</Typist>
           </h2>
         </div>
 
