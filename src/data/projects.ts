@@ -1,22 +1,48 @@
-export const projects = [
+export interface Project {
+  name: string;
+  techstack: string;
+  description: string[];
+  link?: string;
+  time: string;
+}
+
+export const projects: Project[] = [
   {
-    name: "HeyCare (TechTO Hackathon 2025)",
-    techstack: "React, Typescript, Tailwind, Supabase, OpenRouter API, WebSpeech API",
+    name: 'Peel Panthers Soccer Club',
+    techstack: 'Next.js, React, TypeScript, TailwindCSS, Zod, Resend, Vercel',
     description: [
-      "Developed an AI-powered medical documentation platform that automates transcription and organizes patient–clinician conversations into structured records.",
-      "Streamlined workflows for reviewing, editing, and exporting patient notes, enabling faster, more efficient documentation and record sharing."
+      'Built a mobile-responsive Next.js website, enhancing engagement for a 100+ member club by centralizing information and showcasing achievements.',
+      'Implemented a multi-step sign-up flow with React Hook Form and Zod, and automated registration confirmations via Resend API.',
     ],
-    link: "https://github.com/ThanushSupra/Hey-Care",
-    time: "Sep 2025"
-  }, 
-  { 
-    name: "Peel Panthers Soccer Club Website",
-    techstack: "Next.js, React, Typescript, Tailwind, Resend, Vercel",
+    link: 'https://peelpanthers.com',
+    time: 'Jan 2026 – Present',
+  },
+  {
+    name: 'Treasure Runner Game Engine',
+    techstack: 'C, Python, Docker, CI/CD, GitLab',
     description: [
-      "Mobile responsive website for the Peel Panthers Soccer Club that allows for easy management of players, teams, and events.",
-      "Streamlined registration process for new players, and centralized information for coaches and parents."
+      'Built a modular C-based game engine with procedurally generated worlds, supporting room layouts, portals, treasures, and player navigation.',
+      'Developed Python scripts and a curses-based UI using ctypes for automated integration testing and persistent game state.',
     ],
-    link: "https://peelpanthers.com",
-    time: "Dec 2025"
-  }
+    time: 'Jan 2026 – Present',
+  },
+  {
+    name: 'HeyCare – TechTO Hackathon \'25',
+    techstack: 'React, TypeScript, Supabase, OpenRouter, WebSpeech',
+    description: [
+      'Developed a React full-stack prototype with Supabase, improving medical note capture efficiency by 40%.',
+      'Integrated voice-to-text note generation using WebSpeech and OpenRouter APIs, reducing typing time by 80%.',
+    ],
+    link: 'https://github.com/ThanushSupra/Hey-Care',
+    time: 'Oct 2025 – Nov 2025',
+  },
+  {
+    name: 'Robotics Maze Solver',
+    techstack: 'C/C++, Arduino, IR Sensors',
+    description: [
+      'Designed and programmed a robot using IR sensors and Arduino to navigate a maze, achieving a 90% task completion rate.',
+      'Led a team of 12 students, driving the development of an efficient and responsive maze-solving robot.',
+    ],
+    time: 'Oct 2025 – Nov 2025',
+  },
 ];

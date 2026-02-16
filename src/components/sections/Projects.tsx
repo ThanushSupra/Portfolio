@@ -1,48 +1,53 @@
-import { projects } from '../../data/projects'
-import { useInView } from "react-intersection-observer";
+import { projects } from '../../data/projects';
+import FadeSection from '../ui/FadeSection';
+import ScrollFloat from '../ui/ScrollFloat';
+import { SECTION_HEADING_FLOAT } from '../../config/animation';
 
-const Projects = () => {
+const Projects = () => (
+  <FadeSection id="projects" aria-label="Projects">
+    <ScrollFloat {...SECTION_HEADING_FLOAT}>Projects</ScrollFloat>
 
-  const {ref: projectsRef, inView} = useInView({ threshold: 0.25, triggerOnce: false});
+    <div className="mt-5 divide-y divide-gray-800/60">
+      {projects.map((p, i) => (
+        <article key={i} className="py-6 first:pt-0">
+          <div className="flex items-baseline justify-between gap-5">
+            <h4 className="text-2xl text-white">
+              {p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors duration-200"
+                >
+                  {p.name}
+                  <span className="ml-1.5 text-gray-600 text-lg">↗</span>
+                </a>
+              ) : (
+                p.name
+              )}
+            </h4>
+            <span className="text-base text-gray-600 shrink-0">{p.time}</span>
+          </div>
 
-  // Base transition utility classes: short, subtle, and snappy
-  const base = "transition-all duration-300 ease-out";
-  // Hidden state: fully transparent and shifted down a bit
-  const hidden = "opacity-0 translate-y-4";
-  // Visible state: fully opaque and in place
-  const shown = "opacity-100 translate-y-0";
+          <p className="text-base text-gray-500 mt-1.5">{p.techstack}</p>
 
-  return (
-    <section ref = {projectsRef} id="projects" aria-label="Projects"
-    
-    className={`${base} ${inView ? shown : hidden}`}>
-      
-      <h3 className='text-4xl text-white'>Projects</h3>
-
-      <div className="mt-4 space-y-6">
-
-        {projects.map((p, key) => (
-
-          <article key={key}>
-            <h4 className='text-gray-200 text-2xl'>{p.name}</h4>
-
-            <p className='text-gray-300 text-xl'>
-              {p.time} | <a className='inline-block underline hover:text-white transition duration-300 hover:scale-[1.05]' href={p.link} target="_blank" rel="noopener noreferrer">Link</a>
-            </p>
-
-            <ul className="text-gray-400 text-lg mt-2 space-y-1 list-disc pl-5">
+          <details className="mt-3 group">
+            <summary className="text-base text-gray-500 cursor-pointer select-none hover:text-gray-400 transition-colors duration-200 list-none flex items-center gap-2">
+              Details
+              <span className="text-sm transition-transform duration-200 group-open:rotate-90">
+                ▸
+              </span>
+            </summary>
+            <ul className="text-lg text-gray-400 mt-2.5 space-y-1.5 list-disc pl-5">
               {p.description.map((item, k) => (
                 <li key={k}>{item}</li>
               ))}
             </ul>
+          </details>
+        </article>
+      ))}
+    </div>
+  </FadeSection>
+);
 
-          </article>
-        ))}
-
-        
-      </div>
-    </section>
-  )
-}
-
-export default Projects
+export default Projects;
