@@ -23,7 +23,7 @@ const Header = () => (
           className="text-6xl text-gray-400"
           text="Software Engineer Specializing in AI & ML"
           typingSpeed={60}
-          initialDelay={3200}
+          initialDelay={2200}
           showCursor
           cursorCharacter="|"
           loop={false}

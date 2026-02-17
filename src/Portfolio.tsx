@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import './styles/index.css';
 import Navbar from './components/layout/Navbar';
 import Header from './components/layout/Header';
@@ -6,22 +7,25 @@ import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Footer from './components/layout/Footer';
-import DotGrid from './components/ui/DotGrid';
+
+const DotGrid = lazy(() => import('./components/ui/DotGrid'));
 
 const Portfolio = () => (
   <div className="relative min-h-screen">
-    <DotGrid
-      dotSize={2}
-      gap={15}
-      baseColor="#151821"
-      activeColor="#38BDF8"
-      proximity={100}
-      shockRadius={250}
-      shockStrength={5}
-      resistance={750}
-      returnDuration={1.5}
-      className="fixed inset-0 z-0"
-    />
+    <Suspense fallback={null}>
+      <DotGrid
+        dotSize={2}
+        gap={15}
+        baseColor="#151821"
+        activeColor="#38BDF8"
+        proximity={100}
+        shockRadius={250}
+        shockStrength={5}
+        resistance={750}
+        returnDuration={1.5}
+        className="fixed inset-0 z-0"
+      />
+    </Suspense>
 
     <Navbar />
 

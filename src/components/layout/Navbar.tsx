@@ -6,7 +6,7 @@ const NAV_LINKS = [
 ];
 
 const Navbar = () => (
-  <nav className="sticky top-0 z-20 backdrop-blur-md bg-[#0B0D12]/60 border-b border-white/[0.06]">
+  <nav className="relative z-20 border-b border-white/[0.06]">
     <div className="mx-auto max-w-4xl px-8 flex items-center justify-between h-16">
       <a
         href="#header"
