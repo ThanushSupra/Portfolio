@@ -1,7 +1,7 @@
-const profilePhoto = new URL('../../assets/ProfilePhoto.JPG', import.meta.url).href;
-
 import TextType from '../ui/TextType';
 import FadeSection from '../ui/FadeSection';
+
+const profilePhoto = new URL('../../assets/ProfilePhoto.JPG', import.meta.url).href;
 
 const Header = () => (
   <FadeSection as="header" id="header" aria-label="Header">
