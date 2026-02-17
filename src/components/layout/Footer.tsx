@@ -1,27 +1,25 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import FadeSection from '../ui/FadeSection';
 
 const RESUME_URL = '/ThanushSupramaniamFinalResume.pdf';
 
-const ICON_SIZE = 44;
+const ICON_SIZE = 22;
 
 const SOCIAL_LINKS = [
   {
     label: 'GitHub',
     href: 'https://github.com/ThanushSupra',
-    icon: <GitHubIcon sx={{ fontSize: ICON_SIZE }} />,
+    icon: <FaGithub size={ICON_SIZE} />,
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/tsupra',
-    icon: <LinkedInIcon sx={{ fontSize: ICON_SIZE }} />,
+    icon: <FaLinkedinIn size={ICON_SIZE} />,
   },
   {
     label: 'Email',
     href: 'mailto:s.thanushkanth11@gmail.com',
-    icon: <EmailIcon sx={{ fontSize: ICON_SIZE }} />,
+    icon: <FaEnvelope size={ICON_SIZE} />,
   },
 ];
 
@@ -32,17 +30,17 @@ const Footer = () => (
         href={RESUME_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="rounded-full px-6 py-3 bg-gray-900 text-gray-400 text-3xl
-                   shadow-2xl ring-1 ring-gray-700 transition duration-300 cursor-pointer
-                   hover:bg-gray-800 hover:text-white hover:ring-gray-600 hover:scale-[1.05]"
+        className="rounded-full px-8 py-3 bg-white/[0.05] text-gray-300 text-2xl
+                   ring-1 ring-white/[0.1] transition-all duration-300 cursor-pointer
+                   hover:bg-white/[0.1] hover:text-white hover:ring-white/[0.15] hover:scale-[1.03]"
       >
         View Resume
       </a>
     </div>
 
-    <hr className="my-6 dark:border-gray-700" />
+    <hr className="my-8 border-white/[0.06]" />
 
-    <div className="pb-8 text-white text-2xl text-center flex justify-center gap-6">
+    <div className="pb-8 text-gray-400 text-center flex justify-center gap-4">
       {SOCIAL_LINKS.map(({ label, href, icon }) => (
         <a
           key={label}
@@ -50,14 +48,15 @@ const Footer = () => (
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="transition duration-300 hover:scale-[1.1]"
+          className="p-3 rounded-full bg-white/[0.04] ring-1 ring-white/[0.08]
+                     transition-all duration-300 hover:bg-white/[0.08] hover:text-white hover:scale-110"
         >
           {icon}
         </a>
       ))}
     </div>
 
-    <p className="text-gray-500 text-lg text-center">
+    <p className="text-gray-600 text-lg text-center">
       Still a work in progress — bear with me :)
     </p>
   </FadeSection>

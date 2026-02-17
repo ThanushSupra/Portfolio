@@ -7,42 +7,50 @@ const Projects = () => (
   <FadeSection id="projects" aria-label="Projects">
     <ScrollFloat {...SECTION_HEADING_FLOAT}>Projects</ScrollFloat>
 
-    <div className="mt-5 divide-y divide-gray-800/60">
+    <div className="mt-6 space-y-10">
       {projects.map((p, i) => (
-        <article key={i} className="py-6 first:pt-0">
-          <div className="flex items-baseline justify-between gap-5">
-            <h4 className="text-2xl text-white">
-              {p.link ? (
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-300 transition-colors duration-200"
-                >
-                  {p.name}
-                  <span className="ml-1.5 text-gray-600 text-lg">↗</span>
-                </a>
-              ) : (
-                p.name
-              )}
-            </h4>
-            <span className="text-base text-gray-600 shrink-0">{p.time}</span>
-          </div>
-
-          <p className="text-base text-gray-500 mt-1.5">{p.techstack}</p>
-
-          <details className="mt-3 group">
-            <summary className="text-base text-gray-500 cursor-pointer select-none hover:text-gray-400 transition-colors duration-200 list-none flex items-center gap-2">
-              Details
-              <span className="text-sm transition-transform duration-200 group-open:rotate-90">
-                ▸
+        <article key={i}>
+          <details className="group">
+            <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none flex items-baseline gap-3">
+              <span className="text-sm text-gray-500 transition-transform duration-200 group-open:rotate-90 shrink-0 translate-y-px">
+                &#9656;
               </span>
+              <h4 className="text-2xl text-white tracking-wide">
+                {p.link ? (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-300 transition-colors duration-200"
+                  >
+                    {p.name}
+                    <span className="ml-1.5 text-gray-600 text-lg">
+                      &#8599;
+                    </span>
+                  </a>
+                ) : (
+                  p.name
+                )}
+              </h4>
             </summary>
-            <ul className="text-lg text-gray-400 mt-2.5 space-y-1.5 list-disc pl-5">
-              {p.description.map((item, k) => (
-                <li key={k}>{item}</li>
-              ))}
-            </ul>
+
+            <div className="mt-2 ml-6 space-y-1">
+              <p className="text-lg text-gray-500">{p.time}</p>
+              <p className="text-lg text-gray-500">
+                Tech Stack: {p.techstack}
+              </p>
+
+              <ul className="mt-4 space-y-2.5 list-disc pl-5">
+                {p.description.map((item, k) => (
+                  <li
+                    key={k}
+                    className="text-lg text-gray-400 leading-relaxed tracking-wide"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </details>
         </article>
       ))}

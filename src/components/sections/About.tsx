@@ -6,15 +6,16 @@ const About = () => (
   <FadeSection id="about" aria-label="About">
     <ScrollFloat {...SECTION_HEADING_FLOAT}>About</ScrollFloat>
 
-    <div className="mt-4 text-lg text-gray-400 leading-relaxed space-y-3">
+    <div className="mt-6 space-y-4 text-xl leading-relaxed text-gray-400 tracking-wide">
       <p>
-        Previously at Weve as a Software Engineering Intern. Currently
-        exploring machine learning and AI, and sharpening full‑stack and
-        Python skills.
+        Previously at <span className="text-gray-100">Weve</span> as a
+        Software Engineering Intern. Currently exploring{' '}
+        <span className="text-gray-100">machine learning and AI</span>, and
+        sharpening full&#8209;stack and Python skills.
       </p>
       <p>
-        Outside of tech, I&apos;m heavily in the gym, playing soccer, and discovering
-        new music.
+        Outside of tech, I&apos;m heavily in the gym, playing soccer, and
+        discovering new music.
       </p>
     </div>
   </FadeSection>
