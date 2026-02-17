@@ -21,9 +21,20 @@ const Header = () => (
         <TextType
           as="h2"
           className="text-6xl text-gray-400"
-          text="Software Engineer Specializing in AI & ML"
+          text="Software Engineer"
           typingSpeed={60}
           initialDelay={2200}
+          showCursor
+          cursorCharacter=""
+          loop={false}
+        />
+        <br />
+        <TextType
+          as="h2"
+          className="text-6xl text-gray-400"
+          text="Specializing in AI & ML"
+          typingSpeed={60}
+          initialDelay={3500}
           showCursor
           cursorCharacter="|"
           loop={false}
