@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Analytics />
     <Portfolio />
+    <Analytics />
   </StrictMode>,
 )
